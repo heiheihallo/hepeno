@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:hepe.no)",
+      "Bash(php artisan:*)",
+      "Bash(composer require:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}
