@@ -56,6 +56,11 @@
                               class="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition resize-none"></textarea>
                 </div>
 
+                <div class="cf-turnstile" data-sitekey="{{ config('services.turnstile.site_key') }}" data-theme="dark"></div>
+                @error('cf-turnstile-response')
+                    <p class="text-sm text-red-400">{{ $message }}</p>
+                @enderror
+
                 <p class="text-xs text-zinc-600">
                     Ved å sende inn skjemaet godtar du vår <a href="/personvern" class="underline hover:text-zinc-400">personvernpolicy</a>.
                 </p>
@@ -65,6 +70,7 @@
                     Send melding
                 </button>
             </form>
+            <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         </div>
     </section>
 

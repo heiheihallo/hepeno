@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'public.home')->name('home');
 Route::view('/kontakt-oss', 'public.kontakt')->name('kontakt');
-Route::post('/kontakt-oss', [KontaktController::class, 'send'])->name('kontakt.send');
+Route::post('/kontakt-oss', [KontaktController::class, 'send'])->middleware('throttle:5,1')->name('kontakt.send');
 Route::view('/personvern', 'public.personvern')->name('personvern');
 Route::view('/cookies', 'public.cookies')->name('cookies');
 Route::view('/vilkar', 'public.vilkar')->name('vilkar');
